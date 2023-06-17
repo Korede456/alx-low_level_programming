@@ -12,19 +12,15 @@ int main(void)
 
 	for (i = 0; i < 10; i++)
 	{
-		putchar('0' + i);
-
-		j = 0;
-		while (j < 10 && j > i)
+		for (j = 0; j < 10; j++)
 		{
-			putchar('0' + j);
-
-			if (j < 9)
+			if (j > i)
 			{
+				putchar('0' + i);
+				putchar('0' + j);
 				putchar(',');
 				putchar(' ');
 			}
-			j++;
 		}
 	}
 
