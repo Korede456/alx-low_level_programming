@@ -4,7 +4,6 @@
  * main - it prints _putchar
  * Return: always 0
  */
-/* function: prints _putchar */
 
 int main(void)
 {
