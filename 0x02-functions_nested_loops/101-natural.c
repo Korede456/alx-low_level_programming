@@ -10,9 +10,9 @@ int main(void)
 {
 	int sum;
 
-	for (i = 0; i < 1024; i++)
+	for (int i = 0; i < 1024; i++)
 	{
-		if ((int i % 3) == 0 || (i % 5) == 0)
+		if ((i % 3) == 0 || (i % 5) == 0)
 		{
 			sum += i;
 		}
