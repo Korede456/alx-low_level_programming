@@ -3,7 +3,7 @@
 
 int main(void)
 {
-	print_numbers();
+	printf("%c", print_most_numbers());
 
 	return (0);
 }
