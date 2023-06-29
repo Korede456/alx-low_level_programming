@@ -21,5 +21,9 @@ void reverse_array(int *a, int n)
 		j++;
 		i--;
 	}
-	a = result;
+	
+	for (i = 0; i < n; i++)
+	{
+		a[i] = result[i];
+	}
 }
