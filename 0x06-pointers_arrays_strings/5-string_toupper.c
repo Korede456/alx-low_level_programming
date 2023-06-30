@@ -2,19 +2,21 @@
 
 /**
  * string_toupper - it changes all lowercase letters of
- * @string: the string to be checked
+ * @n: the string to be checked
  * Return: returns a char value
  */
 
-char *string_toupper(char *str)
+char *string_toupper(char *n)
 {
-	char *string = str;
+	int i;
 
-	while (*string != '\0')
+	i = 0;
+	while (n[i] != '\0')
 	{
-		if (*string <= 'z' && *string >= 'a')
-			*string = *ptr - 'a' + 'A';
-		string++;
+		if (n[i] >= 'a' && n[i] <= 'z')
+			n[i] = n[i] - 32;
+		i++;
 	}
-	return (str);
+	return (n);
 }
+
