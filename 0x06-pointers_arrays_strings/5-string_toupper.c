@@ -6,13 +6,15 @@
  * Return: returns a char value
  */
 
-char *string_toupper(char *string)
+char *string_toupper(char *str)
 {
+	char *string = str;
+
 	while (*string != '\0')
 	{
-		if (*string <= 'z' || *string >= 'a')
-			*string = ((char) (*string - 32));
+		if (*string <= 'z' && *string >= 'a')
+			*string = *ptr - 'a' + 'A';
 		string++;
 	}
-	return (string);
+	return (str);
 }
