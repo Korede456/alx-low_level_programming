@@ -9,7 +9,7 @@
  * Return: always 0
  */
 
-void main(int argc __attribute__((unused)), char *argv[])
+int main(int argc __attribute__((unused)), char *argv[])
 {
 	char *programName = argv[0];
 
