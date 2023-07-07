@@ -3,9 +3,11 @@
 
 /**
  * main - entry point
+ * @argc: number of arguments
+ * @argv: array of arguments
  */
 
-void main(int argc, char *argv[])
+void main(int argc __attribute__((unused)), char *argv[])
 {
 	char *programName = argv[0];
 
