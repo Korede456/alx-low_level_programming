@@ -15,9 +15,14 @@ char *str_concat(char *s1, char *s2)
 	unsigned int size;
 	char *newstring;
 
-	if (s1 == NULL || s2 == NULL)
+	if (s1 == NULL)
 	{
-		return (NULL);
+		s1 = "";
+	}
+
+	if (s2 == NULL)
+	{
+		s2 = "";
 	}
 
 	size = (strlen(s1) + strlen(s2) + 1);
@@ -28,7 +33,8 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
 	}
 
-	newstring = strcat(s1, s2);
+	strcpy(newstring, s1);
+	strcat(newstring, s2);
 
 	return (newstring);
 }
