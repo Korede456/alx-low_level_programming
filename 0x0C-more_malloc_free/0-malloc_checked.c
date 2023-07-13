@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
 
 /**
@@ -12,11 +13,11 @@ void *malloc_checked(unsigned int b)
 {
 	int *num;
 
-	num = malloc(sizeof(b));
+	num = (int *)malloc(sizeof(b));
 
 	if (num == NULL)
 	{
-		return (98);
+		_putchar('0' + 98);
 	}
 
 	return (num);
