@@ -11,14 +11,14 @@
 
 void *malloc_checked(unsigned int b)
 {
-	int *num;
+	void *p;
 
-	num = (int *)malloc(sizeof(b));
+	p = malloc(b);
 
-	if (num == NULL)
+	if (p == NULL)
 	{
 		_putchar('0' + 98);
 	}
 
-	return (num);
+	return (p);
 }
