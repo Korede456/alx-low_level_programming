@@ -6,6 +6,7 @@
  * string_nconcat - entry point
  * @s1: parameter 1
  * @s2: param 2
+ * @n: number of string
  * Return: char type
  */
 
