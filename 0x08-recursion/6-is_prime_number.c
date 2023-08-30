@@ -1,22 +1,6 @@
 #include "main.h"
 
 /**
- * is_prime_number - entry point
- * @n: intput
- * Return: integer always
- */
-
-int is_prime_number(int n)
-{
-	if(n <= 1)
-	{
-		return (0);
-	}
-	return (_prime(n, n-1));
-}
-
-
-/**
  * _prime - entry
  * @n: input 1
  * @j: input 2
@@ -34,4 +18,19 @@ int _prime(int n, int j)
 		return (0);
 	}
 	return (_prime(n, j - 1));
+}
+
+/**
+ * is_prime_number - entry point
+ * @n: intput
+ * Return: integer always
+ */
+
+int is_prime_number(int n)
+{
+	if(n <= 1)
+	{
+		return (0);
+	}
+	return (_prime(n, n-1));
 }
