@@ -17,11 +17,11 @@ int _root_recursion(int a, int begin, int end)
 		middle = begin + (end - begin) / 2;
 		squ = middle * middle;
 
-		if (squ == n)
+		if (squ == a)
 		{
 			return (middle);
 		}
-		else if (squ < n)
+		else if (squ < a)
 		{
 			return (_root_recursion(a, middle + 1, end));
 		}
