@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * root-recursion - searches for the root
+ * _root_recursion - searches for the root
  * @a: input
  * @begin: input 2
  * @end: input 3
