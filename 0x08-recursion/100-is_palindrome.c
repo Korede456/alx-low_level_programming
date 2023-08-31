@@ -35,7 +35,7 @@ int _strlen_recursion(char *s)
 }
 
 /**
- * check_palindrom - entry point
+ * check_palindrome - entry point
  * @s: string to check
  * @i:entry 2
  * @length: string length
