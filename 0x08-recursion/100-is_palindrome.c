@@ -36,5 +36,5 @@ int check_palindrome(char *s, int i, int length)
 	{
 		return (1);
 	}
-	return (check_palindrome(s, i + 1, lenght-1));
+	return (check_palindrome(s, i + 1, lenght - 1));
 }
