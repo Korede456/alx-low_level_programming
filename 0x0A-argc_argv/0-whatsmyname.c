@@ -11,9 +11,9 @@
 
 int main(int argc __attribute__((unused)), char *argv[])
 {
-	char *programName = argv[0];
+	char *appName = argv[0];
 
-	printf("%s\n", programName);
+	printf("%s\n", appName);
 
 	return (0);
 }
