@@ -11,11 +11,15 @@ char *str_concat(char *s1, char *s2)
 {
 	char *string;
 
-	string = malloc(sizeof(s1) + sizeof(s2) + 1);
+	string = (char *)malloc(strlen(s1) + strlen(s2) + 1);
 
-	if (!s1 && !s2)
+	if (s1 == NULL)
 	{
-		return (NULL);
+		S2 = "";
+	}
+	if (s2 == NULL)
+	{
+		S1 = "";
 	}
 
 	strcpy(string, s1);

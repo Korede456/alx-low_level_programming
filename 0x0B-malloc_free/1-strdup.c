@@ -2,15 +2,15 @@
 
 /**
  * _strdup - duplicates a string
- * str: string input
- * return: a pointer
+ * @str: string input
+ * Return: a pointer
  */
 
 char *_strdup(char *str)
 {
 	char *dupstring;
 
-	dupstring = malloc(sizeof(str));
+	dupstring = (char *)malloc(strlen(str) + 1);
 
 	if (!str)
 	{
