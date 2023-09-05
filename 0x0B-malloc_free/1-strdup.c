@@ -9,7 +9,6 @@
 char *_strdup(char *str)
 {
 	char *dupstring;
-	char *error;
 
 	dupstring = (char *)malloc(strlen(str) + 1);
 
