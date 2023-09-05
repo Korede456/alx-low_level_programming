@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdlib.h>
+
 /**
  * argstostr - concatenates all argument passed
  * @ac: int input
