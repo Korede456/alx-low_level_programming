@@ -15,11 +15,11 @@ char *str_concat(char *s1, char *s2)
 
 	if (s1 == NULL)
 	{
-		S2 = "";
+		s2 = "";
 	}
 	if (s2 == NULL)
 	{
-		S1 = "";
+		s1 = "";
 	}
 
 	strcpy(string, s1);

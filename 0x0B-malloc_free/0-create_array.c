@@ -2,7 +2,7 @@
 
 /**
  * create_array - it create an array of chars
- * size: size of the array
+ * @size: size of the array
  * @c: char to be initialised
  * Return: a pointer to the array
  */

@@ -12,7 +12,7 @@ char *_strdup(char *str)
 
 	dupstring = (char *)malloc(strlen(str) + 1);
 
-	if (!str)
+	if (str == NULL)
 	{
 		return (NULL);
 	}
