@@ -1,1 +1,1 @@
-This directory contains tasks on malloc and free
+This directory contains my projects on malloc and free in c programming 

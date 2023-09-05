@@ -1,10 +1,13 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
 
 /**
- * create_array - it create an array of chars
+ * create_array - A function that allocates memory
+ * space for an array
  * @size: size of the array
- * @c: char to be initialised
- * Return: a pointer to the array
+ * @c: parameter
+ * Return: a char value
  */
 
 char *create_array(unsigned int size, char c)
@@ -12,23 +15,21 @@ char *create_array(unsigned int size, char c)
 	char *array;
 	unsigned int i;
 
-	i = 0;
-	array = malloc(size * sizeof(c));
-
-
 	if (size == 0)
 	{
-		return (NULL);
-	}
-	if (!array)
-	{
-		return (NULL);
+		return (NULL); /* Return NULL if size is 0 */
 	}
 
-	while (i < size)
+	array = (char *)malloc(size); /* allocate memory for the array */
+
+	if (array == NULL)
+	{
+		return (NULL); /* Return NULL if memory allocation fails */
+	}
+
+	for (i = 0; i < size; i++)
 	{
 		array[i] = c;
-		i++;
 	}
 	return (array);
 }

@@ -1,34 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "main.h"
+#include <string.h>
 
 /**
- * str_concat - it concatenate two strings
- * @s1: string1
- * @s2: string2
- * Return: a pointer to a char
+ * str_concat - A function that concatenate teo strings
+ * @s1: the first string
+ * @s2: the second string
+ * Return: Return a pointer to the concatenated string
  */
 
 char *str_concat(char *s1, char *s2)
 {
-	char *string;
-
-	string = (char *)malloc(strlen(s1) + strlen(s2) + 1);
+	unsigned int size;
+	char *newstring;
 
 	if (s1 == NULL)
-	{
-		s2 = "";
-	}
-	if (s2 == NULL)
 	{
 		s1 = "";
 	}
 
-	strcpy(string, s1);
-	strcat(string, s2);
+	if (s2 == NULL)
+	{
+		s2 = "";
+	}
 
-	if (!string)
+	size = (strlen(s1) + strlen(s2) + 1);
+	newstring = (char *)malloc(size);
+
+	if (newstring == NULL)
 	{
 		return (NULL);
 	}
 
-	return (string);
+	strcpy(newstring, s1);
+	strcat(newstring, s2);
+
+	return (newstring);
 }
