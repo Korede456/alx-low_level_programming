@@ -11,16 +11,10 @@ char *_strdup(char *str)
 	char *dupstring;
 	char *error;
 
-	error[] = "failed to allocate memory";
 	dupstring = (char *)malloc(strlen(str) + 1);
 
 	if (str == NULL)
 	{
-		while (error)
-		{
-			_putchar(error);
-			error++;
-		}
 		return (NULL);
 	}
 	if (dupstring == NULL)
