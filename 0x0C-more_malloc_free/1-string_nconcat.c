@@ -1,12 +1,10 @@
-#include <stdlib.h>
 #include "main.h"
 
 /**
- * *string_nconcat - entry point 
+ * *string_nconcat - entry point
  * @s1: string 1
  * @s2: string 2
  * @n: number of bytes
- *
  * Return: pointer to string
  */
 
