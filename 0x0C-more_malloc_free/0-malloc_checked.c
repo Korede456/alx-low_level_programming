@@ -3,6 +3,7 @@
 /**
  * malloc_checked - entry point
  * @b: memory size
+ * Return: void
  */
 
 void *malloc_checked(unsigned int b)
@@ -11,7 +12,7 @@ void *malloc_checked(unsigned int b)
 
 	memory = malloc(b);
 
-	if(!memory)
+	if (!memory)
 	{
 		exit(98);
 	}
