@@ -1,18 +1,18 @@
 #include "main.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 #define ERR_MSG "Error"
 
 /**
- * is_digit - checks if a string contains a non-digit char
+ * is_digit - entry point
  * @s: string to be evaluated
  *
- * Return: 0 if a non-digit is found, 1 otherwise
+ * Return: 0 or 1
  */
 int is_digit(char *s)
 {
-	int i = 0;
+	int i;
+
+	i = 0;
 
 	while (s[i])
 	{
@@ -24,14 +24,16 @@ int is_digit(char *s)
 }
 
 /**
- * _strlen - returns the length of a string
+ * _strlen - entry point
  * @s: string to evaluate
  *
  * Return: the length of the string
  */
 int _strlen(char *s)
 {
-	int i = 0;
+	int i;
+
+	i = 0;
 
 	while (s[i] != '\0')
 	{
@@ -58,7 +60,9 @@ void errors(void)
  */
 int main(int argc, char *argv[])
 {
-	char *s1, *s2;
+	char *s1;
+	char *s2;
+
 	int len1, len2, len, i, carry, digit1, digit2, *result, a = 0;
 
 	s1 = argv[1], s2 = argv[2];
