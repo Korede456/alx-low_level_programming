@@ -1,11 +1,10 @@
-#include <stdlib.h>
 #include "main.h"
 
 /**
- * *_memset - fills memory with a constant byte
- * @s: memory area to be filled
+ * *_memset - entry point
+ * @s: memory area
  * @b: char to copy
- * @n: number of times to copy b
+ * @n: number of times
  *
  * Return: pointer to the memory area s
  */
