@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/**
+ * main - print opcodes if the main function
+ * @argc: argument count
+ * @argv: argument array
+ *
+ * Return: always (0)
+ */
+
+int main(int argc, char *argv[])
+{
+	int byte, i;
+	char *array;
+
+	if (argc != 2)
+	{
+		printf("Error\n");
+		exit(1);
+	}
+
+	byte = atoi(argv[1]);
+
+	if (byte < 0)
+	{
+		printf("Error\n");
+		exit(2);
+	}
+
+	array = (char *)main;
+
+	for (i = 0; i < byte; i++)
+	{
+		if (i == byte - 1)
+		{
+			printf("%02hhx\n", arr[i]);
+			break;
+		}
+		printf("%02hhx ", arr[i]);
+	}
+	return (0);
+}
