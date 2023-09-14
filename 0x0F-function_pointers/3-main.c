@@ -9,16 +9,18 @@
 
 int main(int argc, char *argv[])
 {
-	int a, b, result;
+	int a, b;
 
-	a = atoi(argv[0]);
-	b = atoi(argv[2]);
-
-	if (argc != 3)
+	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	result = (*get_op*func(argv[1]))(a, b);
-	return (result);
+
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
+
+	printf("%d\n", get_op_func(argv[2])(a, b));
+
+	return (0);
 }
