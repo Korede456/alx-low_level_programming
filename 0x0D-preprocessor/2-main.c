@@ -4,8 +4,6 @@
 /*
  * main - Entry point of the program
  *
- * Description: This is the main function of the program
- *
  * Return: always 0
  */
 
