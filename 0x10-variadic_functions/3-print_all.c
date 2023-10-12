@@ -15,6 +15,7 @@ void print_all(const char * const format, ...)
 	int i;
 	float f;
 	char *s;
+	char *sep;
 	va_list args;
 	int f_index;
 
@@ -27,15 +28,15 @@ void print_all(const char * const format, ...)
 		{
 			case 'c':
 				c = va_arg(args, int);
-				printf("%c", c);
+				printf("%c%s", c, sep);
 				break;
 			case 'i':
 				i = va_arg(args, int);
-				printf("%d", i);
+				printf("%d%s", i, sep);
 				break;
 			case 'f':
 				f = va_arg(args, double);
-				printf("%f", f);
+				printf("%f%s", f, sep);
 				break;
 			case 's':
 				s = va_arg(args, char *);
@@ -43,17 +44,14 @@ void print_all(const char * const format, ...)
 				{
 					s = "(nil)";
 				}
-				printf("%s", s);
+				printf("%s%s", s, sep);
 				break;
 			default:
-				break;
+				f_index++;
+				continue;
 		}
+		sep = ", ";
 		f_index++;
-
-		if (format[f_index] != '\0')
-		{
-			printf(", ");
-		}
 	}
 	printf("\n");
 	va_end(args);
