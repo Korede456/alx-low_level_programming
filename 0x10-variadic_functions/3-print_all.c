@@ -23,7 +23,7 @@ void print_all(const char * const format, ...)
 	va_start(args, format);
 	while (format[f_index])
 	{
-		switch (format[i])
+		switch (format[f_index])
 		{
 			case 'c':
 				c = va_arg(args, int);
