@@ -2,7 +2,7 @@
 
 /**
  * list_len - list length
- * #h: first node
+ * @h: first node
  *
  * Return: always 0
  */
