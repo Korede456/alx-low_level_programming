@@ -12,11 +12,6 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	unsigned int xor;
 	unsigned int count;
 
-	if (n == '\0' || m == '\0')
-	{
-		return ('\0');
-	}
-
 	xor = n ^ m;
 	count = 0;
 
