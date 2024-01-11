@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * slistint_len - calculate the length of a list
+ * dlistint_len - calculate the length of a list
  * @h: points to the head node
  *
  * Return: the number of nodes
