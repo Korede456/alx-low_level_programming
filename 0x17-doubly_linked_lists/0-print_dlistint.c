@@ -14,10 +14,6 @@ size_t print_dlistint(const dlistint_t *h)
 
 	count = 0;
 	current = malloc(sizeof(dlistint_t));
-
-	if (!current)
-		return (0);
-
 	current->n = h->n;
 	current->next = h->next;
 	current->prev = h->prev;
