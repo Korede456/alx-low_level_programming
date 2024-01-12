@@ -9,12 +9,15 @@
 
 void free_dlistint(dlistint_t *head)
 {
-	dlistint_t *temp = head;
+	dlistint_t *current;
+	dlistint_t *next_node;
 
-	while (head->next != NULL)
+	current = head;
+
+	while (current != NULL)
 	{
-		temp = head->next;
-		free(head);
-		head = temp;
+		next_node = current->next;
+		free(current);
+		current = next_node;
 	}
 }
