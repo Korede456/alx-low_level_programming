@@ -1,40 +1,69 @@
 #include "lists.h"
 
+size_t dlistint_len(const dlistint_t *h);
+dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n);
+
 /**
- * insert_dnodeint_at_index - insert a new node
+ * insert_dnodeint_atindex - insert a new node at index
  * @h: points to the head node
- * @idx: index of where the insertion should be
- * @n: new_node data
- *
- * Return: Address of new node or NULL
+ * @idx: insertion index
+ * @n: node data
  */
 
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	unsigned int count;
-	dlistint_t *current;
 	dlistint_t *new_node;
+	dlistint_t *current;
 	dlistint_t *temp;
+	size_t len;
+	unsigned int count;
 
-	current = *h;
 	count = 0;
+	len = dlistint_len(*h) - 1;
 	new_node = malloc(sizeof(dlistint_t));
 
-	new_node->n = n;
-	new_node->next = NULL;
-	new_node->prev = NULL;
+	if (idx > len || new_node == NULL)
+		return (NULL);
 
-	while (current != NULL && count != idx)
+	new_node->n  = n;
+
+	current = *h;
+	if (current != NULL && count != idx)
 	{
 		current = current->next;
 		count++;
 	}
 
 	temp = current->prev;
-	current->prev = new_node;
 	new_node->next = current;
+	current->prev = new_node;
 	new_node->prev = temp;
 	temp->next = new_node;
-
 	return (new_node);
+}
+
+/**
+ * dlistint_len - calculate the length of a list
+ * @h: points to the head node
+ *
+ * Return: the number of nodes
+ */
+
+size_t dlistint_len(const dlistint_t *h)
+{
+	size_t count;
+	dlistint_t *current;
+
+	count = 0;
+	current = malloc(sizeof(dlistint_t));
+	current->n = h->n;
+	current->next = h->next;
+	current->prev = h->prev;
+
+	while (current)
+	{
+		count += 1;
+		current = current->next;
+	}
+	return (count);
 }
