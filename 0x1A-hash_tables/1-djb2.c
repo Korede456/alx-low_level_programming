@@ -1,4 +1,4 @@
-#include "hash_tables.c"
+#include "hash_tables.h"
 
 /**
  * hash_djb2 - generates a hash code
@@ -13,9 +13,11 @@ unsigned long int hash_djb2(const unsigned char *str)
 	int c;
 
 	hash = 5381;
+
 	while ((c = *str++))
 	{
-	hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
+		hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
 	}
+
 	return (hash);
 }
