@@ -1,52 +1,65 @@
 #include "hash_tables.h"
-
 /**
- * hash_tables_set -  this adds or update an element in a hash table
- * @ht: pointer to the ht
- * @key: key to add - this cannot be an empty str
- * @value: value associated with key
- * Return: upon failure - 0
- * otherwise -1.
+ * add_node - adds a new node at the beginning of list
+ * @head: pointer to fisrt node
+ * @key: key of value
+ * @value: value
+ * Return: address of new element
  */
+hash_node_t *add_node(hash_node_t **head, char **key, char **value)
+{
+	hash_node_t *new, *current;
+
+	current = *head;
+	while (current && strcmp(current->key, *key))
+	{
+		current = current->next;
+	}
+	if (current && !strcmp(current->key, *key))
+	{
+		free(current->value);
+		current->value = *value;
+		free(*key);
+		return (*head);
+	}
+	new = (hash_node_t *)malloc(sizeof(hash_node_t));
+	if (!new)
+	{
+		return (NULL);
+	}
+	new->key = *key;
+	new->value = *value;
+	new->next = *head;
+	*head = new;
+	return (*head);
+}
+/**
+ * hash_table_set - adds an element to the hash table
+ * @ht: hash table
+ * @key: key to value
+ * @value: value
+ * Return: 1 on success else 0
+*/
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
+	unsigned long int index;
 	hash_node_t *new;
-	char *value_copy;
-	unsigned long int index, i;
+	char *key_2, *value_2;
 
-	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
+	if (!strlen(key) || !key || !ht)
 		return (0);
-
-	value_copy = strdup(value);
-	if (value_copy == NULL)
+	key_2 = malloc(sizeof(key));
+	if (!key_2)
 		return (0);
-
-	index = key_index((const unsigned char *)key, ht->size);
-	for (i = index; ht->array[i]; i++)
-	{
-		if (strcmp(ht->array[i]->key, key) == 0)
-		{
-			free(ht->array[i]->value);
-			ht->array[i]->value = value_copy;
-			return (1);
-		}
-	}
-
+	value_2 = malloc(sizeof(value));
+	if (!value_2)
+		return (0);
+	strcpy(key_2, key);
+	strcpy(value_2, value);
+	index = key_index((unsigned char *)key_2, ht->size);
 	new = malloc(sizeof(hash_node_t));
-	if (new == NULL)
-	{
-		free(value_copy);
+	if (!new)
 		return (0);
-	}
-	new->key = strdup(key);
-	if (new->key == NULL)
-	{
-		free(new);
-		return (0);
-	}
-	new->value = value_copy;
-	new->next = ht->array[index];
-	ht->array[index] = new;
-
+	add_node(&ht->array[index], &key_2, &value_2);
 	return (1);
 }
