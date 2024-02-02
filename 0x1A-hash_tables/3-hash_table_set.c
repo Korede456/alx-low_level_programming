@@ -1,23 +1,23 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_set - updates an element in a hash table
+ * hash_tables_set -  this adds or update an element in a hash table
  * @ht: pointer to the ht
- * @key: key to be added to the hash table
- * @value: value to be associated with the key
- * Return: 0 or 1
+ * @key: key to add - this cannot be an empty str
+ * @value: value associated with key
+ * Return: upon failure - 0
+ * otherwise -1.
  */
-
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *item;
+	hash_node_t *new;
 	char *value_copy;
 	unsigned long int index, i;
 
 	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
 		return (0);
 
-	value_copy = strdup(value);
+	value_copy - strdup(value);
 	if (value_copy == NULL)
 		return (0);
 
@@ -32,21 +32,21 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 	}
 
-	item = malloc(sizeof(hash_node_t));
-	if (item == NULL)
+	new = malloc(sizeof(hash_node_t));
+	if (new == NULL)
 	{
 		free(value_copy);
 		return (0);
 	}
-	item->key = strdup(key);
-	if (item->key == NULL)
+	new->key = strdup(key);
+	if (new->key == NULL)
 	{
-		free(item);
+		free(new);
 		return (0);
 	}
-	item->value = value_copy;
-	item->next = ht->array[index];
-	ht->array[index] = item;
+	new->value = value_copy;
+	new->next = ht->array[index];
+	ht->array[index] = new;
 
 	return (1);
 }
