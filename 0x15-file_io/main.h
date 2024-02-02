@@ -1,11 +1,16 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#define _POSIX_C_SOURCE 200809L
+
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <fcntl.h>
 #include <string.h>
+#include <stdarg.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 
 int _putchar(int c);
 ssize_t read_textfile(const char *filename, size_t letters);
